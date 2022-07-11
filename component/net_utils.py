@@ -49,13 +49,6 @@ def get_biz_map_id_name():
 # 业务map<id,name>
 
 biz_map_id_name = get_biz_map_id_name()['data']['info']
-# biz_map_id_name = [
-#     {
-#         "bk_biz_id": 4,
-#         "default": 0,
-#         "bk_biz_name": "广东政务服务网电子证照系统"
-#     }
-# ]
 
 
 def get_search_inst(limit=10, start=0):
@@ -81,10 +74,6 @@ def get_search_inst_names():
             data_hosts = get_search_inst(
                 page_size, (i + 1) * page_size)['data']['info']
             datas.extend(data_hosts)
-    #    print(len(datas))
-    #    for i in datas:
-    #        if i['bk_host_innerip'] == "172.17.128.45":
-    #            print(i['bk_host_name'])
     return datas
 
 
@@ -209,7 +198,7 @@ def do_post_max_speed_send_time(biz_id, ip, max_speed):
 # ---------------------------  -----------------------
 def do_post_cpu(biz_id):
     '''
-    获取cpu平均使用，最大使用
+    获取cpu平均使用,最大使用
     '''
     sql = "Select max(usage) as max_use,avg(usage) as avg_use from " + str(
         biz_id) + "_system_cpu_summary where time >= '" + staticstical_day_start + "' and time <= '" + staticstical_day_end + "' group by bk_biz_id, bk_cloud_id, ip"
@@ -236,7 +225,7 @@ def do_post_application_mem(biz_id):
 
 def do_post_disk(biz_id):
     '''
-    获取disk平均使用，最大使用
+    获取disk平均使用,最大使用
     '''
     sql = "Select max(in_use) as max_in_use,avg(in_use) as avg_in_use from " + str(
         biz_id) + "_system_disk where time >= '" + staticstical_day_start + "' and time <= '" + staticstical_day_end + "' group by bk_biz_id, ip, bk_cloud_id, mount_point"
@@ -353,4 +342,4 @@ def list_biz_hosts(id, rules=[]):
     }
     if rules:
         data["host_property_filter"] = rules
-    return do_post("/api/c/compapi/v2/cc/list_biz_hosts/", data, "获取biz_id全部ip：")
+    return do_post("/api/c/compapi/v2/cc/list_biz_hosts/", data, "获取biz_id全部ip:")
