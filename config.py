@@ -1,8 +1,7 @@
 import datetime
 config = {
-    # 社区版3.0测试环境
-    "BK_URL": "http://paas.bktest.com/",
-    "BK_NOTIFY_URL": "http://paas.bktest.com/",
+    "BK_URL": "http://paas.bkxxx.com/",
+    "BK_NOTIFY_URL": "http://paas.bkxxx.com/",
     "BK_APP_CODE": "bk_monitorv3",
     "BK_APP_SECRET": "02e3a356-2230-4ad2-a99a-b372cb36d346",
     "BK_TOKEN": "admin",
@@ -11,11 +10,9 @@ config = {
 }
 # 修改邮箱，多个邮箱可用逗号隔开
 mail_config = {
-    "RECEIVER": "harryliu@canway.net"
+    "RECEIVER": "xxx@xxx.com"
 }
 
-
-# biz = 2
 now = datetime.datetime.now() - datetime.timedelta(days=1)
 staticstical_day_start_8 = now.strftime('%Y-%m-%d 00:00:00')
 staticstical_day_end_8 = now.strftime('%Y-%m-%d 23:59:59')

@@ -29,6 +29,16 @@ pip3 install openpyxl-3.0.7-py2.py3-none-any.whl
 "BK_TOKEN": "admin",
 邮箱接收者：mail_config
 ```
+# 监控数据统计时间
+```
+统计开始时间 staticstical_day_start
+统计结束时间 staticstical_day_end
+```
+# 告警数据统计时间
+```
+告警统计开始时间 staticstical_day_start_8
+告警统计结束时间 staticstical_day_end_8
+```
 
 # 运行命令
 
